@@ -9,7 +9,6 @@ import Header from "./components/header/Header";
 import Home from "./pages/home/home";
 import MovieList from "./components/movieList/movieList";
 import NewLogin from "./newLogin";
-import Card from "react-bootstrap/Card";
 import { useState } from "react";
 
 function App() {

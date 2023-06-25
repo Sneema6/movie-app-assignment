@@ -12,7 +12,6 @@ import {
 import MovieList from "../../components/movieList/movieList";
 import Cards from "../../components/card/card";
 import Loading from "../Loading";
-import movieDetailModal from "../../components/movieDetail.js/movieDetailModal";
 
 const Home = ({ movies, setMovies, page, setPage }) => {
   console.log(page);
