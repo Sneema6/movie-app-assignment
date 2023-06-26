@@ -14,13 +14,11 @@ import Cards from "../../components/card/card";
 import Loading from "../Loading";
 
 const Home = ({ movies, setMovies, page, setPage }) => {
-  console.log(page);
   //   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   //   const [page, setPage] = useState(1);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  console.log("selectedMovie", selectedMovie);
 
   const fetchMovies = async () => {
     // Get the access token from localStorage
@@ -45,7 +43,6 @@ const Home = ({ movies, setMovies, page, setPage }) => {
       //   .then((response) => response.json())
       if (response.ok) {
         const responseData = await response.json();
-        console.log("response", responseData);
         setMovies((prev) => [...prev, ...responseData.results]);
       }
     } catch (error) {
@@ -65,9 +62,6 @@ const Home = ({ movies, setMovies, page, setPage }) => {
   }, [page]);
 
   const handelInfiniteScroll = async () => {
-    // console.log("scrollHeight" + document.documentElement.scrollHeight);
-    // console.log("innerHeight" + window.innerHeight);
-    // console.log("scrollTop" + document.documentElement.scrollTop);
     try {
       if (
         window.innerHeight + document.documentElement.scrollTop + 1 >=
@@ -101,7 +95,6 @@ const Home = ({ movies, setMovies, page, setPage }) => {
     setSelectedMovie(null);
   };
 
-  console.log(movies);
   return (
     <>
       {isLoading && <Loading />}

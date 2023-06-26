@@ -24,7 +24,6 @@ function FetchMovies() {
       //   .then((response) => response.json())
       if (response.ok) {
         const responseData = await response.json();
-        console.log("response", responseData);
         setMovies((prev) => [...prev, ...responseData.results]);
       }
     } catch (error) {

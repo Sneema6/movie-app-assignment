@@ -9,11 +9,9 @@ const Header = ({ movies, setMovies, setPage }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const accessToken = localStorage.getItem("accessToken");
-  console.log(accessToken);
   const submitHandler = (e) => {
     e.preventDefault();
-    // console.log(movies);
-    //
+
     if (search.length <= 3) {
       return;
     }
@@ -24,7 +22,6 @@ const Header = ({ movies, setMovies, setPage }) => {
     const filterData = movies.filter((i) =>
       i.title.toUpperCase().includes(search.toUpperCase())
     );
-    console.log(filterData);
     setMovies(filterData);
     setSearched(true);
   };

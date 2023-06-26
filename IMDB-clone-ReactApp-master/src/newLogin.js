@@ -43,11 +43,8 @@ function NewLogin({ setAuth }) {
 
           // Store the access token securely (e.g., in localStorage)
           localStorage.setItem("accessToken", accessToken);
-          //   setAccessToken(accessToken1);
-          console.log("accessToken", accessToken);
 
           // Redirect to the movies page or perform any other action
-          // For React Router, you can use: history.push('/movies');
           setAuth(true);
           navigate("/movies");
         } else {
